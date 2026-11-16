@@ -1,0 +1,12 @@
+# Single-node Apache Kafka (KRaft mode, so no ZooKeeper) for the ingestion demo.
+# The official apache/kafka image ships with a working single-node config that
+# advertises localhost:9092, so nothing else is needed.
+#
+#   docker compose up -d      # start (give it ~10 seconds)
+#   docker compose down       # stop and remove when you're done
+services:
+  kafka:
+    image: apache/kafka:latest
+    container_name: kafka-demo
+    ports:
+      - "9092:9092"
